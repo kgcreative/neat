@@ -2,6 +2,22 @@ $grid--rtl: (
   direction: rtl,
 );
 
+.test-grid {
+  $medium-screen: 1000px;
+  $test-neat-grid: (
+      columns: 12,
+      gutter: 5px,
+      media: $medium-screen,
+  );
+
+  @include grid-container($test-neat-grid) {
+    &.grid-visual { @include grid-visual; }
+
+    .grid__column {
+      @include grid-column(1);
+    }
+  }
+}
 .grid {
   @include grid-container;
 }
