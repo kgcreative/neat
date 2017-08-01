@@ -19,10 +19,15 @@
 ///
 /// @content
 ///   Grid media will temporarily override the default grid with the attributes
-///   of the custom grids. This change is scoped to within the each grid media in the mixin
-///   block, and once the mixin has ended the default grid will revert to its
-///   original state as defined by `$neat-grid`. This allows for different
+///   of the custom grids. When `grid-media` is given a custom grid, it will
+///   apply that grid to any of other Neat mixins within the `grid-media` block
+///   (`{…}`). Once the mixin block has ended the default grid will revert to
+///   its original state as defined by `$neat-grid`. This allows for different
 ///   gutter width and column count based on screen size or other properties.
+///
+///   If multiple grids are passed in to `grid-media`, it will loop through the
+///   contents of the block, quickly allowing you to apply multiple grids in a
+///   single mixin.
 ///
 /// @example scss
 ///   $custom-neat-grid: (
